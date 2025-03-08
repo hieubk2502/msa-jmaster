@@ -22,3 +22,12 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+.idea/
+account-service/.gitattributes
+account-service/.gitignore
+account-service/.mvn
+account-service/mvnw
+account-service/mvnw.cmd
+account-service/target
+section1-2024

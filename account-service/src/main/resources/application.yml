@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: account-service
+  datasource:
+    url: jdbc:postgresql://${DBMS_HOST:127.0.1.1}:5432/mydb
+    username: ${DBMS_USERNAME:hieutm}
+    password: ${DBMS_PASSWORD:123456}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    root: INFO
+
