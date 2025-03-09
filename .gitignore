@@ -39,13 +39,12 @@ statistic-service/mvnw
 statistic-service/mvnw.cmd
 statistic-service/src/test/
 
-
-
-
-
-
-
-
+notification-service/.gitattributes
+notification-service/.gitignore
+notification-service/.mvn/
+notification-service/mvnw
+notification-service/mvnw.cmd
+notification-service/src/test/
 
 
 

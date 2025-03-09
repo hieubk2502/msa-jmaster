@@ -207,6 +207,37 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "notification-service",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"message 1\",\n    \"createdDate\": \"04/04/2000\"\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/statistic",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"statistic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
