@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "d3e0cba5-cfe7-4fbb-b5f0-2bc0a93bc397",
+		"name": "MSA-jmaster",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26428519"
+	},
+	"item": [
+		{
+			"name": "account-service",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Tran Minh Hieu\",\n    \"password\": \"123456\",\n    \"userName\": \"hieu.tm1\",\n    \"roles\": [\"ADMIN\",\"USER\"]\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/account",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete with user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Tran Minh Hieu\",\n    \"password\": \"123456\",\n    \"userName\": \"hieu.tm1\",\n    \"roles\": [\"ADMIN\",\"USER\"]\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/account",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Tran Minh Hieu\",\n    \"password\": \"123456\",\n    \"userName\": \"hieu.tm1\",\n    \"roles\": [\"ADMIN\",\"USER\"]\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/account",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HOST}}/account",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get with username",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Tran Minh Hieu\",\n    \"password\": \"123456\",\n    \"userName\": \"hieu.tm1\",\n    \"roles\": [\"ADMIN\",\"USER\"]\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/account/hieutm",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account",
+								"hieutm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "statistic-service",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"message 1\",\n    \"createdDate\": \"04/04/2000\"\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/statistic",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"statistic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HOST}}/statistic",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"statistic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

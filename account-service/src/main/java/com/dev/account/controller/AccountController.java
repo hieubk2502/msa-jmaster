@@ -10,17 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
-
 @RestController
-@RequestMapping("/account")
 public class AccountController {
 
     @Autowired
     private AccountService accountService;
 
     // add new
-    @PostMapping
+    @PostMapping("/create")
     public void addAccount(@RequestBody CreateAccountRequestSdi accountDTO) {
         accountService.add(accountDTO);
     }

@@ -3,7 +3,6 @@ package com.dev.account.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
@@ -11,7 +10,7 @@ import lombok.experimental.FieldDefaults;
 import java.util.Set;
 
 @Entity
-@Table(name = "account")
+@Table(name = "account", schema = "account")
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -31,7 +30,7 @@ public class Account {
     String password;
 
     @ElementCollection
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "account_id"))
+    @CollectionTable(name = "user_role",schema = "account", joinColumns = @JoinColumn(name = "account_id"))
     @Column(name = "role")
     private Set<String> roles;
 
