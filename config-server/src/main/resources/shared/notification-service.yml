@@ -1,0 +1,24 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /notification
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    #Create your app password with other (custom name)
+    #https://myaccount.google.com/u/1/apppasswords
+    username: youremail@gmail.com
+    password: passwords
+    port: 587
+    protocol: smtp
+    test-connection: false
+    properties:
+      mail:
+        smtp:
+          auth: true
+        starttls:
+          enable: true
+logging:
+  level:
+    root: INFO

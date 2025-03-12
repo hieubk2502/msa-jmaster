@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+  instance:
+    prefer-ip-address: true

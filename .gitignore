@@ -46,8 +46,13 @@ notification-service/mvnw
 notification-service/mvnw.cmd
 notification-service/src/test/
 
-
-
+config-server/.gitattributes
+config-server/.gitignore
+config-server/.mvn/
+config-server/mvnw
+config-server/mvnw.cmd
+config-server/src/test/
+section2/
 
 
 

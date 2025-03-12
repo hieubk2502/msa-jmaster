@@ -1,43 +1,8 @@
-server:
-  port: 8080
-  servlet:
-    context-path: /account
 spring:
   application:
     name: account-service
-  datasource:
-    url: jdbc:postgresql://${DBMS_HOST:127.0.1.1}:5432/postgres
-    username: ${DBMS_USERNAME:hieutm}
-    password: ${DBMS_PASSWORD:123456}
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-        show_sql: true
-    hibernate:
-      ddl-auto: update
+  config:
+    import: configserver:http://localhost:8888
   cloud:
-    openfeign:
-      circuitbreaker:
-        enabled: true
-      client:
-        config:
-          default:
-            connectTimeout: 5000
-            readTimeout: 5000
-            loggerLevel: basic
-
-resilience4j:
-  circuitbreaker:
     config:
-      default: 10
-  timelimiter:
-    configs:
-      default:
-        timeoutDuration: 1s
-
-logging:
-  level:
-    root: INFO
+      fail-fast: true

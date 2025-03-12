@@ -13,11 +13,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.List;
 
 @RestController
 public class AccountController {
+
+    public static void main(String[] args) {
+        System.out.println(new Date().getHours());
+        System.out.println(Instant.now());
+        System.out.println(LocalDateTime.now().getMinute());
+        System.out.println(ZonedDateTime.now().getMinute());
+    }
 
     @Autowired
     private AccountService accountService;
