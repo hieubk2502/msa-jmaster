@@ -55,5 +55,13 @@ config-server/src/test/
 section2/
 
 
+gateway-service/.gitattributes
+gateway-service/.gitignore
+gateway-service/.mvn/
+gateway-service/mvnw
+gateway-service/mvnw.cmd
+gateway-service/src/test/
+
+
 
 

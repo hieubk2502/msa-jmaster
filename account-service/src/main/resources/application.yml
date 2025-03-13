@@ -5,4 +5,5 @@ spring:
     import: configserver:http://localhost:8888
   cloud:
     config:
-      fail-fast: true
+      fail-fast: true #the service will not run if it can't reach the config-service
+
