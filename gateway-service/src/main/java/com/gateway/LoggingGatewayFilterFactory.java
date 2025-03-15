@@ -1,5 +1,7 @@
 package com.gateway;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.OrderedGatewayFilter;
@@ -28,17 +30,11 @@ public class LoggingGatewayFilterFactory extends AbstractGatewayFilterFactory<Lo
         }, -2);
     }
 
+    @Setter
+    @Getter
     public static class Config {
         //Put the configuration properties for your filter here
         private String baseMsg;
-
-        public void setBaseMsg(String baseMsg) {
-            this.baseMsg = baseMsg;
-        }
-
-        public String getBaseMsg() {
-            return baseMsg;
-        }
     }
 
 
