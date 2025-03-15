@@ -21,7 +21,7 @@ public class StatisticController {
     // Add new
     @PostMapping("/create")
     public CreateStatisticDTO add(@RequestBody CreateStatisticDTO statisticDTO) {
-        log.debug("Add statistic");
+        log.debug("Add statistic, {}", statisticDTO.toString());
 
 	try {
 	    Thread.sleep(10000);

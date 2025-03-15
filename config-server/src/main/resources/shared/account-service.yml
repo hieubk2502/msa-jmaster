@@ -27,8 +27,8 @@ spring:
             connectTimeout: 5000
             readTimeout: 5000
             loggerLevel: basic
-
-resilience4j:
+      micrometer:
+        enabled: true
   circuitbreaker:
     config:
       default: 10

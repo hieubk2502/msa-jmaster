@@ -8,6 +8,7 @@ import com.dev.account.dto.sdo.AccountResponseSdo;
 import com.dev.account.service.AccountService;
 import com.dev.account.service.client.NotificationService;
 import com.dev.account.service.client.StatisticService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@Slf4j
 public class AccountController {
 
     @Autowired
@@ -34,6 +36,8 @@ public class AccountController {
     // add new
     @PostMapping("/create")
     public void addAccount(@RequestBody CreateAccountRequestSdi accountDTO) {
+
+        log.info("Add new account, {}", accountDTO.toString());
         accountService.add(accountDTO);
 
         statisticService.add(

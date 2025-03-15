@@ -1,6 +1,4 @@
-logging:
-  level:
-    root: debug
+
 eureka:
   client:
     service-url:
@@ -20,3 +18,23 @@ management:
   info:
     env:
       enabled: true
+  #zipkin tracing endpoint
+  #1: pass all request trace to zipkin
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: "http://localhost:9411/api/v2/spans"
+
+logging:
+  level:
+    root: info
+  file:
+    name: myapp.log
+  logback:
+    rollingpolicy:
+      max-file-size: 2MB
+  pattern:
+    correlation:  "[${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+  include-application-name: false
