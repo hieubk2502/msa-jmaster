@@ -149,6 +149,341 @@
 			]
 		},
 		{
+			"name": "Gateway-service",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Tran Minh Hieu\",\n    \"password\": \"123456\",\n    \"userName\": \"hieu.tm1\",\n    \"roles\": [\"ADMIN\",\"USER\"]\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/account",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oauth2/token authorization code",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "jmaster",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "6pyzSZSO_jEYh8m-uxL2MqdtTSS2bbQKpo0jLzNpoeK40qJajWr0Nn1rnbqMQxMvSH_q4vLQOaHYByu2YvNuKBB-y_wTu58Ie-2JoxOTs6OlTfMppvDh3usNHDu9MgP4",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://oauthdebugger.com/debug",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/oauth2/token",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oauth2/token refresh",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "jmaster",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "_yZ8FLabQnrag4gIuQwrI6mUbdawm0LzE4CQjLXRbd2juo-CmIocy9J_SA6oaZzOVLgQU9Jo4zo9Jqkvq9KCpBX4nw2Cly1uB_QqPLoHmMogJTv_6AvCxeehRYdplXMr",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/oauth2/token",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oauth2/token client credential",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "jmaster",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "_yZ8FLabQnrag4gIuQwrI6mUbdawm0LzE4CQjLXRbd2juo-CmIocy9J_SA6oaZzOVLgQU9Jo4zo9Jqkvq9KCpBX4nw2Cly1uB_QqPLoHmMogJTv_6AvCxeehRYdplXMr",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/oauth2/token",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete with user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Tran Minh Hieu\",\n    \"password\": \"123456\",\n    \"userName\": \"hieu.tm1\",\n    \"roles\": [\"ADMIN\",\"USER\"]\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/account",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Tran Minh Hieu\",\n    \"password\": \"123456\",\n    \"userName\": \"hieu.tm1\",\n    \"roles\": [\"ADMIN\",\"USER\"]\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/account",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HOST}}/account",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get with username",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Tran Minh Hieu\",\n    \"password\": \"123456\",\n    \"userName\": \"hieu.tm1\",\n    \"roles\": [\"ADMIN\",\"USER\"]\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/account/hieutm",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"account",
+								"hieutm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"from@gmail.com\",\n    \"to\": \"to@gmail.com\",\n    \"toName\": \"message \",\n    \"subject\": \"message \",\n    \"content\": \"04/04/2000\"\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/notification-service/notification/send-notification",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"notification-service",
+								"notification",
+								"send-notification"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "statistic-service",
 			"item": [
 				{
@@ -232,6 +567,233 @@
 							],
 							"path": [
 								"statistic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "get token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "registrar-client",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "client.create",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/oauth2/token",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "client.credential",
+									"disabled": true
+								},
+								{
+									"key": "scope",
+									"value": "client.create",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get token read write",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "UDutY3dVpTGqumNt0xtkdVnc2TfgvmNFV-uhNzOIVXhxj8LwEJAs36x91blxxB35",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "0Wf9Ion9io2osr6xrilJmFER27SBFPXIObz3nMqeQyU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "read write",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/oauth2/token",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiIwMzI0YThjOS1mYTE1LTRjNzctYTBkYy04YmY5NjY1ODViYjYiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJyZWdpc3RyYXItY2xpZW50IiwiYXVkIjoicmVnaXN0cmFyLWNsaWVudCIsIm5iZiI6MTc0Njk4MzIyMiwic2NvcGUiOlsiY2xpZW50LmNyZWF0ZSJdLCJyb2xlcyI6W10sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMCIsImV4cCI6MTc0Njk4MzUyMiwiaWF0IjoxNzQ2OTgzMjIyLCJqdGkiOiIyNGMzYWExMC03NmFmLTQ0ZTEtOTcyMi0zNWZlYzE2MDViYmIifQ.XwIKPP_I20wZUTrDQeNHyek5wDGQca2Lwr7xgoe0zsnFDAJMuaPASOUUlyPQZiUNfcEB3g-Pp1Ca9Xph-IaLxB_U4tQxXE5ibUX5cwoHDmlM1dvcoQRdY4hJ9GIdjHevpC9exHGA4OxKXrqHL8wrCfdH_jnxATItBFgEvcvgmYvUJRpaPSQHHJZoflfXTHJZpFhW8MJiu_TchMXZLzgpBnmbtBGyWgt4TMtFjR8BOdTsbYuZIrOwafDWsy4HFvEd29eyKWNGrmaeImk17pOZjZu1TUSxWkAp_o4vzjxwoUTKLj9BvIQ1oV9P1O2X0PPqDpH4_PVHoTpbTsbALe4xsg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_name\": \"demo\",\n    \"redirect_uris\": [\n        \"https://oauthdebugger.com/debug\"\n    ],\n    \"grant_types\": [\n        \"client_credentials\",\n        \"authorization_code\"\n    ],\n    \"scope\": \"read write\",\n    \"token_endpoint_auth_method\": \"client_secret_basic\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/connect/register",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"connect",
+								"register"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "client.credential",
+									"disabled": true
+								},
+								{
+									"key": "scope",
+									"value": "client.create",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiIwMzI0YThjOS1mYTE1LTRjNzctYTBkYy04YmY5NjY1ODViYjYiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJyZWdpc3RyYXItY2xpZW50IiwiYXVkIjoicmVnaXN0cmFyLWNsaWVudCIsIm5iZiI6MTc0Njk4MzIyMiwic2NvcGUiOlsiY2xpZW50LmNyZWF0ZSJdLCJyb2xlcyI6W10sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMCIsImV4cCI6MTc0Njk4MzUyMiwiaWF0IjoxNzQ2OTgzMjIyLCJqdGkiOiIyNGMzYWExMC03NmFmLTQ0ZTEtOTcyMi0zNWZlYzE2MDViYmIifQ.XwIKPP_I20wZUTrDQeNHyek5wDGQca2Lwr7xgoe0zsnFDAJMuaPASOUUlyPQZiUNfcEB3g-Pp1Ca9Xph-IaLxB_U4tQxXE5ibUX5cwoHDmlM1dvcoQRdY4hJ9GIdjHevpC9exHGA4OxKXrqHL8wrCfdH_jnxATItBFgEvcvgmYvUJRpaPSQHHJZoflfXTHJZpFhW8MJiu_TchMXZLzgpBnmbtBGyWgt4TMtFjR8BOdTsbYuZIrOwafDWsy4HFvEd29eyKWNGrmaeImk17pOZjZu1TUSxWkAp_o4vzjxwoUTKLj9BvIQ1oV9P1O2X0PPqDpH4_PVHoTpbTsbALe4xsg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_name\": \"demo\",\n    \"redirect_uris\": [\n        \"https://oauthdebugger.com/debug\"\n    ],\n    \"grant_types\": [\n        \"client_credentials\",\n        \"authorization_code\"\n    ],\n    \"scope\": \"read write\",\n    \"token_endpoint_auth_method\": \"client_secret_basic\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/connect/register?client_id=0Wf9Ion9io2osr6xrilJmFER27SBFPXIObz3nMqeQyU",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"connect",
+								"register"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "client.credential",
+									"disabled": true
+								},
+								{
+									"key": "scope",
+									"value": "client.create",
+									"disabled": true
+								},
+								{
+									"key": "client_id",
+									"value": "0Wf9Ion9io2osr6xrilJmFER27SBFPXIObz3nMqeQyU"
+								}
 							]
 						}
 					},

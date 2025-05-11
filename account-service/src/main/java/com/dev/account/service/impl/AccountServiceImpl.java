@@ -8,6 +8,7 @@ import com.dev.account.mapper.AccountMapper;
 import com.dev.account.repository.AccountRepository;
 import com.dev.account.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,8 +28,12 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void add(CreateAccountRequestSdi accountDTO) {
         Account account = accountMapper.toAccount(accountDTO);
-
+        account.setPassword(new BCryptPasswordEncoder().encode(accountDTO.getPassword()));
         accountRepository.save(account);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new BCryptPasswordEncoder().encode("123"));
     }
 
     @Override

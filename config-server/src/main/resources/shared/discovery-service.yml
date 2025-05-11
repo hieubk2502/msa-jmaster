@@ -1,2 +1,5 @@
 server:
   port: 8000
+logging:
+  file:
+    name: log/discovery/myapp.log

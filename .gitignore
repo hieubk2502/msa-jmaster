@@ -38,6 +38,7 @@ statistic-service/.mvn/
 statistic-service/mvnw
 statistic-service/mvnw.cmd
 statistic-service/src/test/
+statistic-service/target
 
 notification-service/.gitattributes
 notification-service/.gitignore
@@ -45,6 +46,7 @@ notification-service/.mvn/
 notification-service/mvnw
 notification-service/mvnw.cmd
 notification-service/src/test/
+notification-service/target
 
 config-server/.gitattributes
 config-server/.gitignore
@@ -52,6 +54,7 @@ config-server/.mvn/
 config-server/mvnw
 config-server/mvnw.cmd
 config-server/src/test/
+config-server/target
 section2/
 
 
@@ -68,5 +71,21 @@ monitor-admin/.mvn/
 monitor-admin/mvnw
 monitor-admin/mvnw.cmd
 monitor-admin/src/test/
+monitor-admin/target
 
+auth-service/.gitattributes
+auth-service/.gitignore
+auth-service/.mvn/
+auth-service/mvnw
+auth-service/mvnw.cmd
+auth-service/src/test/
 
+client-register-service/.gitattributes
+client-register-service/.gitignore
+client-register-service/.mvn/
+client-register-service/mvnw
+client-register-service/mvnw.cmd
+client-register-service/src/test/
+
+log/*
+section3/*

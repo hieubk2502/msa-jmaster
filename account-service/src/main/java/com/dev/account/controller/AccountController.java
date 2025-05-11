@@ -8,15 +8,14 @@ import com.dev.account.dto.sdo.AccountResponseSdo;
 import com.dev.account.service.AccountService;
 import com.dev.account.service.client.NotificationService;
 import com.dev.account.service.client.StatisticService;
+import jakarta.annotation.security.PermitAll;
+import org.springframework.security.access.prepost.PreAuthorize;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -34,6 +33,7 @@ public class AccountController {
     private NotificationService notificationService;
 
     // add new
+    @PermitAll
     @PostMapping("/create")
     public void addAccount(@RequestBody CreateAccountRequestSdi accountDTO) {
 
@@ -61,6 +61,7 @@ public class AccountController {
 
     // get all
     @GetMapping
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public List<AccountResponseSdo> getAll() {
         return accountService.getAll();
     }
@@ -72,11 +73,13 @@ public class AccountController {
     }
 
     @DeleteMapping("/{userName}")
+    @PreAuthorize("hasAuthority('SCOPE_write') && hasRole('ADMIN')")
     public void delete(@PathVariable(name = "userName") String userName) {
         accountService.delete(userName);
     }
 
     @PutMapping
+    @PreAuthorize("hasAuthority('SCOPE_write') && hasRole('ADMIN')")
     public void update(@RequestBody UpdateAccountRequestSdi accountDTO) {
         accountService.update(accountDTO);
     }

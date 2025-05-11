@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,17 +16,17 @@ import java.util.Map;
 @Slf4j
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public Map<String, String> conflictData(Exception ex) {
-        log.info(ex.getMessage());
-
-        Map<String, String> map = new HashMap<>();
-        map.put("code", "409");
-        map.put("error", "Confict data");
-
-        return map;
-    }
+//    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+//    @ResponseStatus(HttpStatus.CONFLICT)
+//    public Map<String, String> conflictData(Exception ex) {
+//        log.info(ex.getMessage());
+//
+//        Map<String, String> map = new HashMap<>();
+//        map.put("code", "409");
+//        map.put("error", "Confict data");
+//
+//        return map;
+//    }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     @ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)

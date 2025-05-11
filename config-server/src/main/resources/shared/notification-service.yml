@@ -22,3 +22,5 @@ spring:
 logging:
   level:
     root: INFO
+  file:
+    name: log/noti/myapp.log

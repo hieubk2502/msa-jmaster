@@ -17,6 +17,13 @@ spring:
         show_sql: true
     hibernate:
       ddl-auto: update
+  circuitbreaker:
+    config:
+      default: 10
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 1s
   cloud:
     openfeign:
       circuitbreaker:
@@ -29,14 +36,40 @@ spring:
             loggerLevel: basic
       micrometer:
         enabled: true
-  circuitbreaker:
-    config:
-      default: 10
-  timelimiter:
-    configs:
-      default:
-        timeoutDuration: 1s
-
+      oauth2:
+        enabled: false # false: app using config java # true: openfein auto config
+        # indicate client registration for all
+        clientRegistrationId: notification-service
+  security:
+    oauth2:
+      client:
+        provider:
+          spring:
+            issuer-uri: http://localhost:9000
+            # use service id for registry (recommendation)
+        registration:
+          statistic-service:
+            authorizationGrantType: client_credentials
+            clientId: accountservice
+            clientSecret: 123
+            scope: logs
+            provider: spring
+          notification-service:
+            authorizationGrantType: client_credentials
+            clientId: accountservice
+            clientSecret: 123
+            scope: notification
+            provider: spring
 logging:
   level:
-    root: INFO
+    root: DEBUG
+    org:
+      springframework:
+        security:
+          oauth2: DEBUG
+          jwt: DEBUG
+        web:
+          client:
+            RestTemplate: DEBUG
+  file:
+    name: log/account/myapp.log

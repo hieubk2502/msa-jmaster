@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: client-register-service
+  config:
+    import: configserver:http://localhost:8888
+    # this file is the entrypoint for spring to know to look for the configuration file and hold the initial configuration
+  cloud:
+    config:
+      fail-fast: true # The service will not run if it can't reach the config-service
+  sql:
+    init:
+      mode: ALWAYS
+      schema-locations: classpath:/db/oauth2-registered-client-schema.sql
